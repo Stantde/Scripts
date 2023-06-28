@@ -2,10 +2,9 @@
  
 import random
 
-playerScore = 0
-computerScore = 0
+CHOICES = ('Rock', 'Paper', 'Scissors')
 
-choices = ('Rock', 'Paper', 'Scissors')
+playerScore, computerScore = 0,0
 
 #Decide whether or not to start the game.
 def startGame(playerResponse =''):
@@ -25,29 +24,27 @@ def startGame(playerResponse =''):
 
 #Display the current score    
 def scoreCard():
-    global playerScore
-    global computerScore
     print('The current score is:\n Player: ' + str(playerScore) + '\nComputer: ' + str(computerScore))
 
 #Let the game commence!
 def playGame():
     computerChoice = computerTurn()
     playerChoice = playerTurn()
-    tmp = compare(playerChoice,computerChoice)
-    return tmp
+    winner = compare(playerChoice,computerChoice)
+    return winner
 #Easy task
 def computerTurn():
-    return choices[random.randint(0,2)]
+    return CHOICES[random.randint(0,2)]
 #The challenge
 def playerTurn(playerResponse =''):
-    while playerResponse not in choices:
+    while playerResponse not in CHOICES:
         playerResponse = input('Choose Rock, Paper, or Scissors\n')
     return playerResponse
 
 #And the winner is....!
 def compare(playerChoice,computerChoice):
     pc = (playerChoice,computerChoice)
-    print('The player chose: '+pc[0]+'\n The computer chose: '+pc[1]+'\n')
+    print('The player chose: '+pc[0]+'\nThe computer chose: '+pc[1]+'\n')
     if pc[0] == pc[1]:
         print('This match is a draw!\n')
         return 2
@@ -61,15 +58,15 @@ def compare(playerChoice,computerChoice):
             
     return 
 #add a point to the winner's score
-def updateScoreCard(w):
-    global playerScore
-    global computerScore
+def updateScoreCard(w,localPlayerScore,localComputerScore):
 
     if w == 0:
-        playerScore = playerScore + 1
+        print('The Player Won!\n')
+        return localPlayerScore + 1,localComputerScore
     elif w == 1:
-        computerScore = computerScore + 1
-    return
+        print('The Computer Won!\n')
+        return localPlayerScore,localComputerScore + 1
+    return localPlayerScore , localComputerScore
 
 #close the program
 def endGame():
@@ -78,7 +75,7 @@ def endGame():
 
 #__main__
 while startGame():
-    winner = playGame() #0 is player wins, 1 is pc wins, else 2? for draw?
-    updateScoreCard(winner) #Can i shrink this down?
+#    winner = playGame() #0 is player wins, 1 is pc wins, else 2? for draw?
+    playerScore, computerScore = updateScoreCard(playGame(),playerScore,computerScore) #Can i shrink this down?
     scoreCard()
 endGame()
