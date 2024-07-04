@@ -1,0 +1,28 @@
+#0.0;
+#p114320a;
+$zzProfileConfirmation = 'This profile loaded successfully!';
+$scriptLocation = "M:\114320 Quality Assur\quality\Common folder\Scripts";
+#zRate = 41.73;
+$res = "Restricted";
+$RS = "RemoteSigned";
+#The goal is now to create a new item on the desktop, then remove it.;
+# Here's a location;
+$loc = "C:\users\p114320a\desktop\Narnia2.0";#I make so many references to this fictious location anyway...;
+#Add branching point based off profile used. 
+#1.0.0;#New-Item -ItemType "directory" -Path "C:\users\p114320a\desktop\alsifuh8";#This will be updated on the next line.;
+#1.0.1;#New-Item -ItemType "directory" -Path "$loc";
+#1.0.1;#Set-Location "C:\users\p114320a\desktop\alsifuh8";
+New-Alias -Name SEP -Value Set-ExecutionPolicy -Description "This purpose of this alias is to shorten the command of Set-ExecutionPolicy to something a little more keyboard friendly.";
+New-Alias -Name GEP -Value Get-ExecutionPolicy -Description "This purpose of this alias is to shorten the command of Get-ExecutionPolicy to something a little more keyboard friendly.";
+function Restrict {SEP $Res; cls; GEP};
+function Remote {SEP $RS; cls; GEP};
+function Close {kill -Name cmd; kill -Name powershell_ise; kill -Name powershell};
+#Stop-Process -Name cmd;
+Restrict;
+$DATA = "TOTAL MONEY MAKE-OVER  AT ONE HOUR TWENTY-SIX MINUTES EXACTLY";
+$bookmark = "https://docs.microsoft.com/en-us/powershell/scripting/learn/ps101/01-getting-started?view=powershell-7.2";
+#What about a secret Journal?;
+#I would need to create a text file, change values, save the values, encrpyt the values. Next I would need to decrypt those values.;
+#Can I create a script that makes Narnia, creates a script within narnia to delete itself on closing?;
+#Runscript in common drive to load all preferences and goals and such? How?;
+#In mathematics, the Fibonacci numbers, commonly denoted Fₙ, form a sequence, called the Fibonacci sequence, such that each number is the sum of the two preceding ones, starting from 0 and 1. That is, and for n > 1. The sequence starts: 0, 1, 1, 2, 3, 5, 8...;

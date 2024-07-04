@@ -1,0 +1,24 @@
+$zProfileCheck = "The profile script loaded successfully!";
+$idleLoc="C:\Users\A3T2YZZ\AppData\Local\Programs\Python\Python39\Lib\idlelib"; #location for python IDLE.;
+$res = "Restricted";
+$RS = "RemoteSigned";
+$zzz = "+1";
+$SL = "M:\114320 Quality Assur\Quality\common folder\scripts"; #script location;
+nal -Name GEP -Value Get-ExecutionPolicy -Description "The function of this alias is to check the current execution policy.";
+nal -Name SEP -Value Set-ExecutionPolicy -Description "The function of this alias is to adjust the current execution policy.";
+function IDLE {Start-Process "C:\Users\A3T2YZZ\AppData\Local\Programs\Python\Python39\Lib\idlelib\idle.bat"};
+function Remote {SEP $RS; GEP};
+function Restrict {SEP $res; GEP};
+cls;
+Restrict;
+#How about listing out goals or specific tasks to accomplish? This could be accomplished by bringing up a menu or list?;
+$NULL=Read-Host "Press Enter to continue";
+cls;
+#I want to be able to access this information from any terminal with access to the network;
+	#reloadprofile;
+	#Checkgoals and other notes;
+#This will be performed on command;
+#function reloadProfile {
+#	Set-Location $SL;
+#	 .\get-service.ps1;
+#	};

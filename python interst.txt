@@ -1,0 +1,6 @@
+pip install blockchain-apis
+pip install lifestream
+pip install jal
+pip install QTPyLib
+pip install candlestick-chart
+
