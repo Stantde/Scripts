@@ -1,0 +1,30 @@
+import os
+import pypdf
+FILENAME = 'FOP-08-AC-842910_5.pdf'
+syspath = "C:\\Users\\A3T2YZZ\\Downloads\\"
+os.chdir(syspath)
+gac_pdf = pypdf.PdfReader(FILENAME)
+tmp = []
+page = gac_pdf.pages[0]
+print(page.extract_text())
+'''
+Document Number:  13-0029-7721-6 Version: 5
+Document Title:  Wastewater Carbon Treatment (WWCT)Status: Release
+3M Materials Resource Div
+Factory Operating Procedure - 3M Confidential
+FOP-08-AC-842910
+3M Confidential
+Paper copies are uncontrolled unless managed by local procedure
+Page 1 of 7Document Number:    13-0029-7721-6
+Document Title:   Wastewater Carbon Treatment (WWCT)
+Effective Date: 05/17/2023 03:02:49 PM CDT
+Document Owner:   GRP-08-FOP-AC-Chemicals
+Location Name Description
+3M DECATUR-3MUS-AL
+CHEMICAL PLANT - 0143VX103M DECATUR-3MUS-AL CHEMICAL PLANT - 0143VX10:
+1400 STATE DOCKS RD, DECATUR, AL, US
+Reason for Change:   Corrected document headers to show correct revision and status.
+Operations
+Operation Name Description Vault
+OPRTN-08-AC-Chemical Decatur Chemical Plant Materials Resource Div
+'''
